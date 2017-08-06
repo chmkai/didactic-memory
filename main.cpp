@@ -17,15 +17,36 @@
 
 #include <iostream>
 #include <cstdint>
+#include <array>
+#include <unistd.h>
+
+#include "gol.h"
 #include "globals.h"
 
-int8_t birthCondition;
-int8_t survivalCondition;
+uint8_t birthCondition;
+std::array<uint8_t, 9> survivalCondition = {0,0,0,0,0,0,0,0};
+
+const std::string Version = "0.2.1 Alpha";
 
 int main()
 {
-	std::cout << "Cellular Automata Implementations (GoL + others)\n"
-		<< "This program comes with ABSOLUTELY NO WARRANTY; Press `Shift+W` for details.\n"
-		<< "This is free software, and you are welcome to redistribute "
-		<< "it under certain conditions; Press `Shift+C` for details.\n\n";
+	std::cout
+		<< "------------------------------------------------\n"
+	 	<< "Cellular Automata Implementations (GoL + others)\n"
+		<< "Copyright (c) 2017 Anand Menon\n"
+		<< "------------------------------------------------\n\n"
+		<< "Version " << Version << "\n\n"
+		<< "This program comes with ABSOLUTELY NO WARRANTY.\n"
+		<< "This is free software, and you are welcome to redistribute\n"
+		<< "it under certain conditions. To view the full text \n"
+		<< "of the GNU GPL Licence, Press `Shift+C`.\n\n"
+		<< "How to use: \n"
+		<< "\tSpacebar to start/pause the simulation.\n"
+		<< "\tArrow keys to move the cursor\n"
+		<< "\t\'s\' to toggle cell at cursor\n"
+		<< "\t\'c\' to clear the grid\n\n";
+	birthCondition = 2;
+	survivalCondition = {2,3};
+	usleep(5000000);
+	_gol();
 }
