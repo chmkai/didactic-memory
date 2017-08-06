@@ -1,4 +1,4 @@
-/*	Cellular Automaton Implementations -  Game of Life + Others
+/*	Cellular Automata Implementations -  Game of Life + Others
  *  Copyright (c) 2017 Anand Menon
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -14,3 +14,18 @@
  *	You should have received a copy of the GNU General Public License
  *	along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+#include <iostream>
+#include <cstdint>
+#include "globals.h"
+
+int8_t birthCondition;
+int8_t survivalCondition;
+
+int main()
+{
+	std::cout << "Cellular Automata Implementations (GoL + others)\n"
+		<< "This program comes with ABSOLUTELY NO WARRANTY; Press `Shift+W` for details.\n"
+		<< "This is free software, and you are welcome to redistribute "
+		<< "it under certain conditions; Press `Shift+C` for details.\n\n";
+}
